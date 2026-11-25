@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="sr-Latn" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-i18n="resTitle">Stan u Staroj Varoši, Nikšić</title>
+  <meta name="description" content="Osnova, 3D model, površine i cijena stana u novoj šestospratnoj zgradi od cigle na mirnom uglu Stare Varoši u Nikšiću, Crna Gora." data-i18n-attr="content:resDescription">
+  <meta name="theme-color" content="#282827">
+  <meta name="color-scheme" content="light">
+  <script>
+    // Runs before first paint. Picks the language (same rule as js/data.js); no splash on this page,
+    // so the header is shown straight away. English hides the page until main.js has swapped the text.
+    (function (h) {
+      var en = false, again = false;
+      try {
+        var q = /[?&]lang=(sr|en)\b/.exec(location.search);
+        en = q ? q[1] === 'en' : localStorage.getItem('lang') === 'en';
+        again = sessionStorage.getItem('langSwitch') === '1';
+        sessionStorage.removeItem('langSwitch');
+      } catch (e) { /* storage blocked: Serbian, with the splash */ }
+      var c = h.className.replace(/\bno-js\b/, '') + ' js ' + ('is-entered');
+      if (en) {
+        h.lang = 'en';
+        c += ' i18n-pending';
+        setTimeout(function () { h.classList.remove('i18n-pending'); }, 3000);
+      }
+      h.className = c;
+    })(document.documentElement);
+  </script>
+  <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/familjen-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="residence">
+  <a class="skip-link" href="#main" data-i18n="skip">Preskoči na sadržaj</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-plan" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 11h6v9M14 4v7h6"/></symbol>
+    <symbol id="i-loggia" viewBox="0 0 24 24"><path d="M3 11h18M3 20h18M6 11v9M10 11v9M14 11v9M18 11v9M6 11V4h12v7"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19v-8h18v8M3 16h18M6 11V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></symbol>
+    <symbol id="i-bath" viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-view" viewBox="0 0 24 24"><path d="m3 19 6-9 4 5 3-4 5 8zM16 7.5a1.5 1.5 0 1 0 0-.01"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></symbol>
+    <symbol id="i-rot-left" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></symbol>
+    <symbol id="i-rot-right" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></symbol>
+    <symbol id="i-tilt-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+    <symbol id="i-tilt-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-top" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 12h9M13 4v16"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7M6 9.5V20h12V9.5"/></symbol>
+    <symbol id="i-tour" viewBox="0 0 24 24"><path d="M12 3 3 8v8l9 5 9-5V8zM3 8l9 5 9-5M12 13v8"/><path d="m10.5 9.2 3 1.8-3 1.8z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <header class="site-header" id="header">
+    <div class="site-header__bar">
+      <a class="wordmark site-header__brand" href="index.html" data-brand-link><span class="wordmark__word" data-brand-word></span> <span class="wordmark__tag" data-brand-tag></span></a>
+      <button class="lang-btn" id="lang-btn" type="button" hidden>EN</button>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Otvori meni">
+        <span class="menu-btn__lines" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Glavni meni" data-i18n-attr="aria-label:navLabel">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html#building" data-i18n="navBuilding">Zgrada</a></li>
+          <li><a class="site-nav__link" href="index.html#residences" aria-current="true" data-i18n="navResidences">Stanovi</a></li>
+          <li><a class="site-nav__link" href="index.html#availability" data-i18n="navAvailability">Dostupnost</a></li>
+          <li><a class="site-nav__link" href="#contact" data-i18n="navContact">Kontakt</a></li>
+        </ul>
+        <a class="btn btn--gold btn--compact site-nav__cta" href="#contact" data-i18n="cta">Pošaljite upit</a>
+      </nav>
+      <a class="btn btn--gold btn--compact site-header__cta" href="#contact" data-i18n="cta">Pošaljite upit</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Residence: information and call to action on the left, 3D floor plan on the right -->
+    <section class="unit on-dark" aria-labelledby="unit-title">
+      <div class="unit__grid">
+        <div class="unit__head">
+          <nav class="crumbs" aria-label="Putanja" data-i18n-attr="aria-label:crumbsLabel">
+            <ol class="crumbs__list">
+              <li><a href="index.html#residences" data-i18n="navResidences">Stanovi</a></li>
+              <li><span id="crumb-current" aria-current="page"></span></li>
+            </ol>
+          </nav>
+          <div class="unit__meta"><span id="unit-status"></span><span class="unit__floor" id="unit-floor"></span></div>
+          <h1 class="unit__title" id="unit-title" data-i18n="unitTitle">Stan</h1>
+          <p class="unit__type" id="unit-type"></p>
+        </div>
+
+        <div class="unit__stage" id="unit-stage">
+          <div class="unit__viewer" id="plan-viewer">
+            <p class="unit__loading" aria-hidden="true" data-i18n="planLoading">Priprema 3D osnove…</p>
+          </div>
+          <figure class="unit__fallback" id="plan-fallback" hidden>
+            <img id="plan-fallback-img" alt="" width="1080" height="1456" decoding="async">
+            <figcaption data-i18n="planFallback">3D prikaz nije dostupan u ovom pregledaču, pa vam prikazujemo nacrtanu osnovu.</figcaption>
+          </figure>
+          <p class="unit__hint"><span class="only-fine" data-i18n="planHintFine">Prevucite za rotaciju · desni taster za pomjeranje · Ctrl + točkić za zum</span><span class="only-coarse" data-i18n="planHintCoarse">Prevucite ustranu za rotaciju · raširite prste za zum</span></p>
+          <p class="unit__toast" id="wheel-toast" role="status" hidden data-i18n="wheelToast">Držite Ctrl (⌘ na Macu) i skrolujte da zumirate osnovu</p>
+          <!-- shown by main.js when the residence's plan has a video tour -->
+          <button class="btn btn--gold btn--compact unit__tour-btn" id="tour-open" type="button" aria-haspopup="dialog" aria-controls="tour" hidden>
+            <svg class="icon" aria-hidden="true"><use href="#i-tour"/></svg><span data-i18n="tourBtn">3D obilazak stana</span>
+          </button>
+          <div class="plan-tools" role="toolbar" aria-label="Kontrole 3D osnove" data-i18n-attr="aria-label:toolsLabel" aria-controls="plan-viewer">
+            <button class="plan-tools__btn" type="button" data-plan="left" aria-label="Rotiraj lijevo" data-i18n-attr="aria-label:toolLeft"><svg class="icon" aria-hidden="true"><use href="#i-rot-left"/></svg></button>
+            <button class="plan-tools__btn" type="button" data-plan="right" aria-label="Rotiraj desno" data-i18n-attr="aria-label:toolRight"><svg class="icon" aria-hidden="true"><use href="#i-rot-right"/></svg></button>
+            <button class="plan-tools__btn" type="button" data-plan="up" aria-label="Nagib: pogled s veće visine" data-i18n-attr="aria-label:toolUp"><svg class="icon" aria-hidden="true"><use href="#i-tilt-up"/></svg></button>
+            <button class="plan-tools__btn" type="button" data-plan="down" aria-label="Nagib: pogled s manje visine" data-i18n-attr="aria-label:toolDown"><svg class="icon" aria-hidden="true"><use href="#i-tilt-down"/></svg></button>
+            <button class="plan-tools__btn" type="button" data-plan="in" aria-label="Uvećaj" data-i18n-attr="aria-label:toolIn"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <button class="plan-tools__btn" type="button" data-plan="out" aria-label="Umanji" data-i18n-attr="aria-label:toolOut"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+            <button class="plan-tools__btn" type="button" data-plan="top" aria-label="Pogled odozgo" data-i18n-attr="aria-label:toolTop"><svg class="icon" aria-hidden="true"><use href="#i-top"/></svg></button>
+            <button class="plan-tools__btn" type="button" data-plan="reset" aria-label="Vrati početni prikaz" data-i18n-attr="aria-label:toolReset"><svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg></button>
+          </div>
+        </div>
+
+        <div class="unit__body">
+          <p class="unit__lead" id="unit-summary"></p>
+          <dl class="facts facts--unit" id="unit-facts"></dl>
+          <p class="unit__price" id="unit-price"></p>
+          <div class="unit__actions">
+            <a class="btn btn--gold" href="#contact" data-i18n="viewing">Zakažite razgledanje</a>
+            <a class="btn btn--light" id="unit-call" href="tel:" data-i18n="callOffice">Pozovite prodajni centar</a>
+          </div>
+          <nav class="unit__pager" aria-label="Ostali stanovi" data-i18n-attr="aria-label:pagerLabel">
+            <a class="unit__pager-link" id="unit-prev" href="residence.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span></span></a>
+            <a class="unit__pager-link unit__pager-link--next" id="unit-next" href="residence.html"><span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms and areas -->
+    <section class="rooms section--light" aria-labelledby="rooms-title">
+      <div class="wrapper rooms__grid">
+        <div class="rooms__text">
+          <p class="eyebrow eyebrow--left" data-i18n="roomsEyebrow">Osnova stana</p>
+          <h2 class="section-title section-title--left" id="rooms-title" data-i18n="roomsTitle">Prostorije i površine</h2>
+          <table class="rooms__table">
+            <caption class="visually-hidden" data-i18n="roomsCaption">Prostorije i njihove površine</caption>
+            <thead><tr><th scope="col" data-i18n="roomsRoom">Prostorija</th><th scope="col" data-i18n="roomsArea">Površina</th></tr></thead>
+            <tbody id="rooms-body"></tbody>
+            <tfoot id="rooms-foot"></tfoot>
+          </table>
+          <p class="rooms__note" data-i18n="roomsNote">Površine su izmjerene s crteža i privremene su dok arhitekta ne dostavi konačnu specifikaciju površina. 3D model je prikazan bez namještaja.</p>
+        </div>
+        <figure class="rooms__plan">
+          <img id="rooms-plan-img" alt="" width="1080" height="1456" loading="lazy" decoding="async">
+          <figcaption data-i18n="roomsFig">Raspored s namještajem, ilustrativno</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Enquiry -->
+    <section class="contact section--soft" id="contact" aria-labelledby="contact-title">
+      <div class="wrapper contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow eyebrow--left" data-i18n="contactEyebrow">Kontakt</p>
+          <h2 class="section-title section-title--left" id="contact-title" data-i18n="viewing">Zakažite razgledanje</h2>
+          <p class="contact__intro" data-i18n="resContactIntro">Javite nam kada vam odgovara, a naš prodajni tim će dogovoriti razgledanje i poslati vam planove stanova i cjenovnik.</p>
+          <address class="office" id="office"></address>
+        </div>
+
+        <div class="contact__panel">
+          <form class="form" id="enquiry" method="post">
+            <div class="field">
+              <label class="field__label" for="f-name"><span data-i18n="fName">Ime i prezime</span> <span class="field__req" data-i18n="required">(obavezno)</span></label>
+              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" autocapitalize="words" required>
+              <p class="field__error" id="f-name-error" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-email"><span data-i18n="fEmail">E-mail</span> <span class="field__req" data-i18n="required">(obavezno)</span></label>
+              <input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" required>
+              <p class="field__error" id="f-email-error" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-phone" data-i18n="fPhone">Telefon</label>
+              <input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+              <p class="field__error" id="f-phone-error" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-residence" data-i18n="fResidence">Stan koji vas zanima</label>
+              <select class="field__input field__select" id="f-residence" name="residence"></select>
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-message" data-i18n="fMessage">Poruka</label>
+              <textarea class="field__input field__textarea" id="f-message" name="message" rows="4"></textarea>
+            </div>
+            <div class="field field--check">
+              <input class="field__check" id="f-consent" name="consent" type="checkbox" value="yes" required>
+              <label class="field__check-label" for="f-consent"><span data-i18n="fConsent">Pristajem da me prodajni tim kontaktira u vezi s ovim upitom i da u tu svrhu čuva moje podatke.</span> <span class="field__req" data-i18n="required">(obavezno)</span></label>
+              <p class="field__error" id="f-consent-error" hidden></p>
+            </div>
+            <p class="form__status" id="form-status" role="alert" hidden></p>
+            <button class="btn btn--gold form__submit" id="form-submit" type="submit">Pošaljite upit</button>
+          </form>
+
+          <div class="form-done" id="form-done" tabindex="-1" hidden>
+            <h3 class="form-done__title" id="form-done-title"></h3>
+            <p class="form-done__text" id="form-done-text"></p>
+            <button class="btn btn--outline" id="form-again" type="button" data-i18n="formAgain">Pošaljite novi upit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 3D apartment tour: the visitor drives the walk-through by scrolling (up = forward) -->
+  <dialog class="tour" id="tour" aria-labelledby="tour-title" aria-describedby="tour-hint">
+    <div class="tour__bar">
+      <div class="tour__heading">
+        <p class="tour__eyebrow" id="tour-unit"></p>
+        <h2 class="tour__title" id="tour-title" data-i18n="tourTitle">3D obilazak stana</h2>
+      </div>
+      <button class="tour__close" id="tour-close" type="button" aria-label="Zatvori obilazak" data-i18n-attr="aria-label:tourClose">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <div class="tour__stage" id="tour-stage">
+      <video class="tour__video" id="tour-video" muted playsinline preload="none" disablepictureinpicture disableremoteplayback aria-hidden="true"></video>
+      <p class="tour__loading" id="tour-loading" role="status"><span class="tour__spinner" aria-hidden="true"></span><span id="tour-loading-text" data-i18n="tourLoading">Učitavanje obilaska…</span></p>
+    </div>
+    <div class="tour__controls">
+      <p class="tour__hint" id="tour-hint">
+        <span class="only-fine" data-i18n="tourHintFine">Skrolujte nagore da idete naprijed · nadolje da se vratite</span>
+        <span class="only-coarse" data-i18n="tourHintCoarse">Prevucite nadolje da idete naprijed · nagore da se vratite</span>
+      </p>
+      <label class="visually-hidden" for="tour-progress" data-i18n="tourProgress">Položaj u obilasku</label>
+      <input class="tour__progress" id="tour-progress" type="range" min="0" max="1000" step="1" value="0">
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrapper site-footer__top">
+      <a class="wordmark wordmark--footer" href="index.html" data-brand-link><span class="wordmark__word" data-brand-word></span> <span class="wordmark__tag" data-brand-tag></span></a>
+      <p class="site-footer__line" data-i18n="footerLine">Deset stanova na mirnom uglu Stare Varoši, nadomak tvrđave.</p>
+    </div>
+    <div class="wrapper site-footer__cols">
+      <nav class="site-footer__col" aria-labelledby="footer-explore">
+        <h2 class="site-footer__title" id="footer-explore" data-i18n="footerExplore">Istražite</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html#building" data-i18n="navBuilding">Zgrada</a></li>
+          <li><a href="index.html#residences" data-i18n="navResidences">Stanovi</a></li>
+          <li><a href="index.html#availability" data-i18n="navAvailability">Dostupnost</a></li>
+          <li><a href="#contact" data-i18n="cta">Pošaljite upit</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__col">
+        <h2 class="site-footer__title" data-i18n="footerContact">Kontakt</h2>
+        <address class="site-footer__address" id="footer-contact"></address>
+      </div>
+      <nav class="site-footer__col" aria-labelledby="footer-follow">
+        <h2 class="site-footer__title" id="footer-follow" data-i18n="footerFollow">Pratite nas</h2>
+        <ul class="site-footer__list" id="footer-social"></ul>
+      </nav>
+    </div>
+    <div class="wrapper site-footer__bottom">
+      <p class="site-footer__copy" id="copyright"></p>
+      <ul class="site-footer__legal" id="footer-legal"></ul>
+    </div>
+  </footer>
+</body>
+</html>
